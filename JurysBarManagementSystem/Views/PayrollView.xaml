@@ -1,0 +1,73 @@
+﻿<UserControl
+    x:Class="JurysBarManagementSystem.Views.PayrollView"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+
+    <Grid Background="White" Margin="20">
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <!-- ===============================
+             Payroll Input Panel
+        ================================ -->
+
+        <StackPanel Orientation="Horizontal" Margin="0,0,0,10">
+
+            <TextBox x:Name="EmployeeBox"
+                     Width="150"
+                     Margin="5"
+                     Text="Employee Name"
+                     Foreground="Gray"
+                     GotFocus="TextBox_GotFocus"
+                     LostFocus="TextBox_LostFocus"/>
+
+            <TextBox x:Name="RoleBox"
+                     Width="100"
+                     Margin="5"
+                     Text="Role"
+                     Foreground="Gray"
+                     GotFocus="TextBox_GotFocus"
+                     LostFocus="TextBox_LostFocus"/>
+
+            <TextBox x:Name="SalaryBox"
+                     Width="100"
+                     Margin="5"
+                     Text="Salary Rate"
+                     GotFocus="TextBox_GotFocus"
+                     LostFocus="TextBox_LostFocus"/>
+
+            <TextBox x:Name="HoursBox"
+                     Width="100"
+                     Margin="5"
+                     Text="Hours Worked"
+                     GotFocus="TextBox_GotFocus"
+                     LostFocus="TextBox_LostFocus"/>
+
+            <TextBox x:Name="BonusBox"
+                     Width="100"
+                     Margin="5"
+                     Text="Bonus"
+                     GotFocus="TextBox_GotFocus"
+                     LostFocus="TextBox_LostFocus"/>
+
+            <Button Content="Create Payroll"
+                    Click="CreatePayroll_Click"
+                    Margin="5"/>
+        </StackPanel>
+
+        <!-- ===============================
+             Payroll Data Grid
+        ================================ -->
+
+        <DataGrid x:Name="PayrollGrid"
+                  Grid.Row="1"
+                  AutoGenerateColumns="True"
+                  Height="350"
+                  IsReadOnly="False"
+                  SelectionMode="Single"/>
+
+    </Grid>
+</UserControl>

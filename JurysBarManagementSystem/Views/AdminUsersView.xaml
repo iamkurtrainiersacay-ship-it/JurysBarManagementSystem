@@ -1,0 +1,68 @@
+﻿<UserControl x:Class="JurysBarManagementSystem.Views.AdminUsersView"
+xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+
+    <Grid Margin="20">
+
+        <StackPanel>
+
+            <TextBlock Text="User Account Management"
+                       FontSize="22"
+                       FontWeight="Bold"
+                       Foreground="#1E90FF"
+                       Margin="0 0 0 15"/>
+
+            <!-- =========================
+                 User Input Panel
+            ========================== -->
+
+            <StackPanel Orientation="Horizontal" Margin="0 0 0 10">
+
+                <TextBox x:Name="UsernameBox"
+                         Width="150"
+                         Margin="5"
+                         Text="Username"
+                         Foreground="Gray"
+                         GotFocus="TextBox_GotFocus"
+                         LostFocus="TextBox_LostFocus"/>
+
+                <PasswordBox x:Name="PasswordBox"
+                             Width="150"
+                             Margin="5"/>
+
+                <ComboBox x:Name="RoleBox"
+                          Width="120"
+                          Margin="5">
+                    <ComboBoxItem Content="Admin"/>
+                    <ComboBoxItem Content="Manager"/>
+                    <ComboBoxItem Content="Cashier"/>
+                </ComboBox>
+
+                <Button Content="Add User"
+                        Click="AddUser_Click"
+                        Margin="5"/>
+
+                <Button Content="Update User"
+                        Click="UpdateUser_Click"
+                        Margin="5"/>
+
+            </StackPanel>
+
+            <!-- =========================
+                 Users Table
+            ========================== -->
+
+            <DataGrid x:Name="UsersGrid"
+                      Height="250"
+                      AutoGenerateColumns="True"
+                      SelectionMode="Single"
+                      Margin="0 10"/>
+
+            <Button Content="Delete Selected User"
+                    Click="DeleteUser_Click"
+                    Margin="0 10"/>
+
+        </StackPanel>
+
+    </Grid>
+</UserControl>
